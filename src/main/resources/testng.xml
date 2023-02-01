@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Shevchenko Vasiliy">
+    <test name="19012023">
+        <groups>
+            <run>
+                <include name="regresion"/>
+                <exclude name="First"/>
+            </run>
+               </groups>
+        <classes>
+            <class name="SomeTest"/>
+        </classes>
+    </test>
+</suite>
