@@ -26,11 +26,11 @@ public class SomeTest extends BaseClass {
     public void test2(){
         System.out.println("TEST NAME TEST2 "+driver.getCurrentUrl());
     }
-    @Test(dataProvider = "getUsersList",dataProviderClass = DataProvaderUsers.class,priority = 10,timeOut = 2)
-    public void peramTest(String arg,String arg2) throws InterruptedException {
+    @Test(dataProvider = "convertToOBJECTMATRIX",dataProviderClass = DataProvaderUsers.class,priority = 10)
+    public void peramTest(User user) throws InterruptedException {
         Thread.sleep(3000);
-        System.out.println(arg);
-        System.out.println(arg2);
+        System.out.println(user.getEmail());
+        System.out.println(user.getLastName());
     }
 
 }
