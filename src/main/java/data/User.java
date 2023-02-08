@@ -1,5 +1,6 @@
 package data;
 
+import io.qameta.allure.Attachment;
 import lesson0402.Massengers;
 
 public class User {
@@ -32,6 +33,12 @@ public class User {
         this.email = email;
         this.telephone = telephone;
         this.gender = gender;
+    }
+
+    @Override
+    @Attachment
+    public String toString() {
+        return name+" "+email+" "+ telephone;
     }
 
     public User() {

@@ -1,15 +1,22 @@
-package lesson0402;
-
 import configuretions.BaseClass;
 import data.DataProvaderUsers;
 import data.User;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+import io.qameta.allure.TmsLink;
+import lesson0402.CourseNames;
+import lesson0402.FormPage;
+import lesson0402.Massengers;
+import lesson0402.MyLisenerForFormConsultation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.Assertion;
+import utils.BrowserUtils;
 
 import java.util.List;
+
 @Listeners(MyLisenerForFormConsultation.class)
 public class TestFormConsult extends BaseClass {
 
@@ -21,6 +28,7 @@ public class TestFormConsult extends BaseClass {
         return obj;
     }
 
+
     @BeforeMethod
     public void befor() {
         driver.get("https://dnipro.ithillel.ua/");
@@ -28,7 +36,14 @@ public class TestFormConsult extends BaseClass {
 
     }
 
-    @Test(dataProvider = "getUsers",testName = "TestFormDataProvider")
+    @Test(dataProvider = "getUsers", testName = "TestFormDataProvider"
+            , description = "Parametrics test form consultation")
+    @Link(name = "Link To My Videos", type = "mylink")
+
+    @Link(name = "Vasiliy",type = "vasiliy")
+    @Link(name = "Vasiliy2",type = "vasil",value = "#_jdi_light")
+    @Issue("EFh-Yk0QXhA")
+    @TmsLink("https://dnipro.ithillel.ua/")
     public void testform(User user) throws InterruptedException {
         FormPage formPage = new FormPage(driver);
         formPage.sentForm(user, Massengers.TELEGRAM, CourseNames.FRONTENDBASIC, true);

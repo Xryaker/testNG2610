@@ -9,7 +9,7 @@ public class DataProvaderUsers {
 
     static {
         usersList.add(new User());
-        usersList.add(new User("Elena", "Ivanova", "kdkjdjd", "78996556", "Female"));
+        usersList.add(new User("Elena", "Ivanova", "kdkjdjd@gmail.com", "672255808", "Female"));
 
     }
 
@@ -17,7 +17,7 @@ public class DataProvaderUsers {
         return usersList;
     }
     public static User getValidUser() {
-        return new User("Elena", "Ivanova", "kdkjdjd", "78996556", "Female");
+        return new User("Elena", "Ivanova", "kdkjdjd@gmail.com", "78996556", "Female");
     }
 
     public static User getRandomUser() {

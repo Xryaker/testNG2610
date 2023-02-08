@@ -1,6 +1,8 @@
 package lesson0402;
 
 import data.User;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -53,6 +55,8 @@ public class FormPage {
         search.sendKeys(Keys.ENTER);
     }
 
+    @Step("Create consultation query eserName: {user} messengers: {massengers} courseName {courseNames}")
+    @Description("method in FormPage")
     public void sentForm(User user, Massengers massengers, CourseNames courseNames, boolean b) {
         name.sendKeys(user.getName());
         mail.sendKeys(user.getEmail());
@@ -70,7 +74,7 @@ public class FormPage {
             driver.findElement(By.xpath("//form[@id=\"form-consultation\"]//div[@class=\"form-footer_group\"]/button[@type=\"submit\"and contains(@disabled,\"disabled\") and contains(@class,\"btn\") and contains(@class,\"btn-submit\") and contains(@class,\"form-footer_btn\")and contains(@class,\"-submit\")]"))
                     .isEnabled();
         } catch (Exception e) {
-             return true;
+            return true;
         }
         return false;
 
